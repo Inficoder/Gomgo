@@ -1,7 +1,7 @@
 package util
 
 import (
-	"CrawlerGuitar/pkg/setting"
+	"Gomgo/pkg/setting"
 	"github.com/dgrijalva/jwt-go"
 	"time"
 )

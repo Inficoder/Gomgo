@@ -1,7 +1,7 @@
 package util
 
 import (
-	"CrawlerGuitar/pkg/setting"
+	"Gomgo/pkg/setting"
 	"github.com/Unknwon/com"
 	"github.com/gin-gonic/gin"
 )
