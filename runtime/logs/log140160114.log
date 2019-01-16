@@ -1,0 +1,4 @@
+[ERROR][chord.go:%!s(int=35)]2019/01/14 13:52:14 [read tcp 10.1.16.35:16298->106.12.220.146:27017: wsarecv: An existing connection was forcibly closed by the remote host.]
+[INFO][chord.go:%!s(int=108)]2019/01/14 14:09:09 [name 名称不能为空]
+[INFO][chord.go:%!s(int=108)]2019/01/14 14:09:09 [singer singer不能为空]
+[INFO][chord.go:%!s(int=108)]2019/01/14 14:09:09 [kind kind不能为空]

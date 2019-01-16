@@ -1,0 +1,82 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Hello, world!</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/static/js/jquery-3.2.1.js"></script>
+</head>
+<body onload="indexInit(GetQueryString('ID'))">
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+    <a class="navbar-brand" href="#">Guitar</a>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="/index">chords</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">about</a>
+        </li>
+    </ul>
+</nav>
+<hr/>
+<hr/>
+<hr/>
+<div class="container" >
+    <div id="msg"></div>
+</div>
+
+<script>
+    //ajax
+    function indexInit(ID) {
+        //alert(ID)
+        $.ajax({
+            type: "GET",
+            url: "/play/chord/"+ID,
+            //data: {test:1},
+            async: true,
+            dataType: "json",
+            //xhrFields:{withCredentials:true},
+            success: function(data) {
+                let chord = data.data["chord"]
+                //alert(data.code)
+                //alert(data.data["chord"].Name)
+                $("#msg").html(chord.Singer+"-"+chord.Name+" "+chord.Url+" "+chord.Kind+" "+chord.CoverUrl);
+                //alert(data.data)
+            },
+            error: function() {
+                alert("error!")
+            }
+        });
+    }
+    //跳转
+    function getChordDetail(ID){
+        location.href="/chordDetail?ID="+ID
+    }
+    //时间戳变换
+    function userDate(uData){
+        let myDate = new Date(uData*1000);
+        let year = myDate.getFullYear();
+        let month = myDate.getMonth() + 1;
+        let day = myDate.getDate();
+        return year + '-' + month + '-' + day;
+    }
+    //获取url ID
+    function GetQueryString(name)
+    {
+        let reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+        let r = window.location.search.substr(1).match(reg);
+        if(r!=null)
+            return  unescape(r[2]);
+        return null;
+    }
+
+</script>
+</body>
+</html>

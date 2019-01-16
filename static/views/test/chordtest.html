@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ChordDetail</title>
+    <script type="text/javascript" src="/static/js/jquery-3.2.1.js"></script>
+</head>
+<body onload="indexInit(GetQueryString('ID'))">
+<p id="msg"></p>
+<!--<img src="/static/chords_cover/default.jpg" style="width: 200px;">-->
+<script>
+    function GetQueryString(name)
+    {
+        let reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+        let r = window.location.search.substr(1).match(reg);
+        if(r!=null)
+            return  unescape(r[2]);
+        return null;
+    }
+
+    function indexInit(ID) {
+        //alert(ID)
+        $.ajax({
+            type: "GET",
+            url: "/play/chord/"+ID,
+            //data: {test:1},
+            async: true,
+            dataType: "json",
+            //xhrFields:{withCredentials:true},
+            success: function(data) {
+                let chord = data.data["chord"]
+                //alert(data.code)
+                //alert(data.data["chord"].Name)
+                $("#msg").html(chord.Singer+"-"+chord.Name+" "+chord.Url+" "+chord.Kind+" "+chord.CoverUrl);
+                //alert(data.data)
+            },
+            error: function() {
+                alert("error!")
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
