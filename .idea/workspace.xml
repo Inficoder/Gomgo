@@ -17,7 +17,7 @@
     <session id="-522274993">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.0" value="4" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.4" value="3" />
@@ -88,8 +88,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/views/test/testbootstrap.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="95" column="45" lean-forward="true" selection-start-line="95" selection-start-column="45" selection-end-line="95" selection-end-column="45" />
+            <state relative-caret-position="198">
+              <caret line="111" column="19" lean-forward="true" selection-start-line="111" selection-start-column="19" selection-end-line="111" selection-end-column="19" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -157,7 +157,7 @@
   </component>
   <component name="GOROOT" path="D:\Go" />
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -194,11 +194,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="158" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="157" />
     <option name="y" value="55" />
     <option name="width" value="1670" />
-    <option name="height" value="1004" />
+    <option name="height" value="1005" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -212,6 +212,11 @@
             <path>
               <item name="Gomgo" type="b2602c69:ProjectViewProjectNode" />
               <item name="Gomgo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Gomgo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Gomgo" type="462c0819:PsiDirectoryNode" />
+              <item name="routers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Gomgo" type="b2602c69:ProjectViewProjectNode" />
@@ -321,14 +326,14 @@
     </recent_temporary>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="127" y="44" width="1336" height="803" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2356091" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.275" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32863188" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49933067" visible="true" weight="0.19605078" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49933067" weight="0.20623146" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -562,8 +567,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/views/test/testbootstrap.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="95" column="45" lean-forward="true" selection-start-line="95" selection-start-column="45" selection-end-line="95" selection-end-column="45" />
+        <state relative-caret-position="198">
+          <caret line="111" column="19" lean-forward="true" selection-start-line="111" selection-start-column="19" selection-end-line="111" selection-end-column="19" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#!!top" expanded="true" />
