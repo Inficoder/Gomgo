@@ -41,7 +41,8 @@ func InitRouter() *gin.Engine{
 	appv1 := r.Group("/play")
 	{
 		appv1.GET("/chord/:Id",v1.GetChord)
-		appv1.GET("/chords",v1.GetChordsList)
+		//appv1.GET("/chords",v1.GetChordsList)
+		appv1.GET("/chords",v1.GetChordsListWithCondition)
 		appv1.POST("/chord",v1.AddChord)
 		//appv1.GET("/chords",v1.GetChordsList)
 		//appv1.GET("/chords",v1.GetChordsList)

@@ -75,6 +75,29 @@ func GetChordsList(c *gin.Context) {
 		"data": data,
 	})
 }
+
+func GetChordsListWithCondition(c *gin.Context){
+	pageNum := com.StrTo(c.Query("page")).MustInt()
+	kind := c.Query("kind")
+	key := c.Query("key")
+	data := make(map[string]interface{})
+	code := e.SUCCESS
+	data["exist"] = "true"
+	list := models.GetChordsListWithCondition(pageNum,setting.PageSize,kind,key)
+	fmt.Println(list)
+	if len(list)==0{
+		data["exist"] = "false"
+	} else {
+		data["chords"] = list
+		data["total"] = models.GetChordsCount()
+	}
+	c.JSON(http.StatusOK, gin.H{
+		"code": code,
+		"msg":  e.GetMsg(code),
+		"data": data,
+	})
+}
+
 //func InsertChord(name string,singer string,url string, kind string,created_by string,modified_by string,modified_on int,cover_url string) (err error) {
 //	con := GetDataBase().C("chord")
 //	err = con.Insert(&Chord{ID: bson.NewObjectId(), Name: name, Url: url,Kind:kind,CreatedBy:modified_by,ModifiedOn:modified_on,CoverUrl:cover_url})
@@ -86,7 +109,7 @@ func AddChord(c *gin.Context){
 	singer := c.Query("singer")
 	//url := c.Query("guitar_name")
 	kind := c.Query("kind")
-	//coverUrl := c.Query("guitar_name")
+	key := c.Query("key")
 	//createdBy:= c.Query("guitar_name")
 
 	valid := validation.Validation{}
@@ -98,7 +121,7 @@ func AddChord(c *gin.Context){
 	if !valid.HasErrors(){
 		if !models.IsExistChordByName(name){
 			code = e.SUCCESS
-			models.InsertChord(name,singer,kind)
+			models.InsertChord(name,singer,kind,key)
 		}else{
 			code = e.ERROR_EXIST_CHORD
 		}
