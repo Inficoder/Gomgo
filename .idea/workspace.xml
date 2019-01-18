@@ -2,14 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e02dc1d-f8fe-4d4c-a497-fa82f7586e6b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/static/chords/wind song/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/chords/wind song/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/chords/戒烟/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/chords/戒烟/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/chords/爱你/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/chords/爱你/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/chords/生僻字/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/chords/生僻字/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/chords/生僻字/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/chords/等你下课/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/chords/等你下课/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/chords/等你下课/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/chords/等你下课/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/chords_cover/perfect.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/chords_cover/生僻字.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CrawlerGuitar" beforeDir="false" afterPath="$PROJECT_DIR$/../CrawlerGuitar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/chord.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/chord.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/util/jwt.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/util/jwt.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/util/pagination.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/util/pagination.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routers/api/v1/chord.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/api/v1/chord.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routers/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/chords/Ed Sheeran-perfect/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/chords/perfect/1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/chords/Ed Sheeran-perfect/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/chords/perfect/2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/chords/Ed Sheeran-perfect/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/chords/perfect/3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/jquery-3.2.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/jquery-3.2.1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/jquery-3.2.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/jquery-3.2.1.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/views/page/chord.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/views/page/chord.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/views/page/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/views/page/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/views/test/chordtest.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/views/test/chordtest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/views/test/testbootstrap.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/views/test/testbootstrap.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PingOffer/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PingOffer/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PingOffer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PingOffer/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PingOffer/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../PingOffer/main.go" afterDir="false" />
@@ -24,19 +45,19 @@
     <session id="-522274993">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="11" />
+          <entry key="project.closed" value="14" />
           <entry key="project.open.time.0" value="4" />
           <entry key="project.open.time.13" value="1" />
-          <entry key="project.open.time.4" value="4" />
+          <entry key="project.open.time.4" value="5" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.open.time.6" value="3" />
-          <entry key="project.opened" value="13" />
+          <entry key="project.open.time.6" value="4" />
+          <entry key="project.opened" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="go" value="69" />
-          <entry key="html" value="15" />
+          <entry key="html" value="16" />
           <entry key="ini" value="4" />
           <entry key="jpg" value="3" />
           <entry key="js" value="2" />
@@ -49,7 +70,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Go" value="69" />
-          <entry key="HTML" value="15" />
+          <entry key="HTML" value="16" />
           <entry key="Image" value="3" />
           <entry key="Ini" value="4" />
           <entry key="JSON" value="2" />
@@ -62,16 +83,16 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="go" value="3559" />
-          <entry key="html" value="2246" />
+          <entry key="go" value="3657" />
+          <entry key="html" value="2852" />
           <entry key="ini" value="52" />
           <entry key="txt" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Go" value="3559" />
-          <entry key="HTML" value="2246" />
+          <entry key="Go" value="3657" />
+          <entry key="HTML" value="2852" />
           <entry key="Ini" value="52" />
           <entry key="PLAIN_TEXT" value="12" />
         </counts>
@@ -80,11 +101,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/views/page/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+            <state>
+              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -117,8 +138,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/chord.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1224">
-              <caret line="74" column="18" selection-start-line="74" selection-start-column="18" selection-end-line="74" selection-end-column="18" />
+            <state relative-caret-position="110">
+              <caret line="107" column="32" selection-start-line="107" selection-start-column="32" selection-end-line="107" selection-end-column="32" />
               <folding>
                 <element signature="e#16#114#0" expanded="true" />
               </folding>
@@ -129,8 +150,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routers/api/v1/chord.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1998">
-              <caret line="121" column="44" selection-start-line="121" selection-start-column="44" selection-end-line="121" selection-end-column="44" />
+            <state relative-caret-position="270">
+              <caret line="118" column="52" selection-start-line="118" selection-start-column="52" selection-end-line="118" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/views/page/chord.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="630">
+              <caret line="35" column="53" lean-forward="true" selection-start-line="35" selection-start-column="53" selection-end-line="35" selection-end-column="53" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -138,8 +172,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routers/router.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="45" column="40" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
+            <state relative-caret-position="342">
+              <caret line="36" column="10" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -159,6 +193,7 @@
       <find>chord</find>
       <find>obj</find>
       <find>br</find>
+      <find>userDate</find>
     </findStrings>
   </component>
   <component name="GOROOT" path="D:\Go" />
@@ -186,13 +221,13 @@
         <option value="$PROJECT_DIR$/static/views/page/testvue.html" />
         <option value="$PROJECT_DIR$/static/views/page/testbootstrap.html" />
         <option value="$PROJECT_DIR$/models/mgo.go" />
-        <option value="$PROJECT_DIR$/static/views/page/chord.html" />
         <option value="$PROJECT_DIR$/pkg/util/jwt.go" />
         <option value="$PROJECT_DIR$/pkg/util/pagination.go" />
-        <option value="$PROJECT_DIR$/routers/api/v1/chord.go" />
         <option value="$PROJECT_DIR$/routers/router.go" />
-        <option value="$PROJECT_DIR$/static/views/page/index.html" />
+        <option value="$PROJECT_DIR$/routers/api/v1/chord.go" />
         <option value="$PROJECT_DIR$/models/chord.go" />
+        <option value="$PROJECT_DIR$/static/views/page/index.html" />
+        <option value="$PROJECT_DIR$/static/views/page/chord.html" />
       </list>
     </option>
   </component>
@@ -202,11 +237,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="27" />
-    <option name="y" value="11" />
-    <option name="width" value="1670" />
-    <option name="height" value="1005" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="127" />
+    <option name="width" value="1505" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -214,6 +248,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -276,18 +311,23 @@
               <item name="Gomgo" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Gomgo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Gomgo" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="chords" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="GO_FMT" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/Nasan/go/src/Gomgo/middleware/logging/log.go" />
+    <property name="SearchEverywhereHistoryKey" value="userDate&#9;null&#9;null" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.vendoring.notification.had.been.shown" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$" />
@@ -295,17 +335,18 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Nasan\go\src\Gomgo\static\views\test" />
-      <recent name="C:\Users\Nasan\go\src\Gomgo\static\js" />
-      <recent name="C:\Users\Nasan\go\src\Gomgo\static" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Nasan\go\src\Gomgo\static\chords" />
+      <recent name="C:\Users\Nasan\go\src\Gomgo\static\chords\小雨写立可白Ⅱ" />
       <recent name="C:\Users\Nasan\go\src\Gomgo\static\chords_cover" />
       <recent name="C:\Users\Nasan\go\src\Gomgo\static\views" />
       <recent name="C:\Users\Nasan\go\src\Gomgo\middleware" />
-      <recent name="C:\Users\Nasan\go\src\Gomgo\pkg\setting" />
-      <recent name="C:\Users\Nasan\go\src\Gomgo\pkg" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Nasan\go\src\Gomgo\static\chords_cover" />
+      <recent name="C:\Users\Nasan\go\src\Gomgo\static\views\test" />
+      <recent name="C:\Users\Nasan\go\src\Gomgo\static\js" />
+      <recent name="C:\Users\Nasan\go\src\Gomgo\static" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -362,10 +403,10 @@
     </recent_temporary>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="102" y="0" width="1204" height="832" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24899599" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33275262" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -562,14 +603,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/views/page/chord.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="36">
@@ -578,20 +617,11 @@
           <second_editor />
         </state>
       </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/views/page/index.html">
+    <entry file="file://$PROJECT_DIR$/routers/router.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="342">
+          <caret line="36" column="10" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -614,25 +644,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/chord.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="74" column="18" selection-start-line="74" selection-start-column="18" selection-end-line="74" selection-end-column="18" />
+        <state relative-caret-position="110">
+          <caret line="107" column="32" selection-start-line="107" selection-start-column="32" selection-end-line="107" selection-end-column="32" />
           <folding>
             <element signature="e#16#114#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routers/api/v1/chord.go">
+    <entry file="file://$PROJECT_DIR$/static/views/page/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1998">
-          <caret line="121" column="44" selection-start-line="121" selection-start-column="44" selection-end-line="121" selection-end-column="44" />
+        <state>
+          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routers/router.go">
+    <entry file="file://$PROJECT_DIR$/routers/api/v1/chord.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="45" column="40" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
+        <state relative-caret-position="270">
+          <caret line="118" column="52" selection-start-line="118" selection-start-column="52" selection-end-line="118" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/views/page/chord.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="35" column="53" lean-forward="true" selection-start-line="35" selection-start-column="53" selection-end-line="35" selection-end-column="53" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

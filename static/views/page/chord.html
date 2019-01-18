@@ -28,8 +28,14 @@
 <hr/>
 <hr/>
 <hr/>
-<div class="container" >
-    <div id="msg"></div>
+<div class="container">
+    <div id="left" style="width: 100%;float: left;">
+
+    </div>
+
+    <div id="right" style="width: 45%;float: right;">
+
+    </div>
 </div>
 
 <script>
@@ -39,15 +45,20 @@
         $.ajax({
             type: "GET",
             url: "/play/chord/"+ID,
-            //data: {test:1},
+            //data: {test:1.jpg},
             async: true,
             dataType: "json",
             //xhrFields:{withCredentials:true},
             success: function(data) {
+                let output = ""
                 let chord = data.data["chord"]
-                //alert(data.code)
-                //alert(data.data["chord"].Name)
-                $("#msg").html(chord.Singer+"-"+chord.Name+" "+chord.Url+" "+chord.Kind+" "+chord.CoverUrl);
+                for (let i = 1;i <= chord.Count;i++){
+                    output += '<img src=/static/chords/'+chord.Url+'/'+i+'.jpg class="img-fluid">'
+                }
+                $(document).attr("title",chord.Singer+' - '+chord.Name)
+                $("#left").append(output)
+                //$("#right").append('<img src="/static/chords_cover/default.jpg" class="img-fluid">')
+                //$("#msg").html(chord.Singer+"-"+chord.Name+" "+chord.Url+" "+chord.Kind+" "+chord.CoverUrl+" "+UnixDateTrans(chord.ModifiedOn));
                 //alert(data.data)
             },
             error: function() {
@@ -55,12 +66,8 @@
             }
         });
     }
-    //跳转
-    function getChordDetail(ID){
-        location.href="/chordDetail?ID="+ID
-    }
     //时间戳变换
-    function userDate(uData){
+    function UnixDateTrans(uData){
         let myDate = new Date(uData*1000);
         let year = myDate.getFullYear();
         let month = myDate.getMonth() + 1;

@@ -13,6 +13,7 @@ type Chord struct {
 	Name string 	   `bson:"name"`
 	Singer string`bson:"singer"`
 	Url string `bson:"url"`
+	Count int `bson:"count"`
 	Kind string `bson:"kind"`
 	//CreatedBy string `bson:"created_by"`
 	Key string `bson:"key"`
@@ -94,10 +95,10 @@ func GetChord(Id string) (Chord) {
 	return chord
 }
 
-func InsertChord(name string,singer string, kind string,key string) (err error) {
+func InsertChord(name string,singer string, kind string,key string,count int) (err error) {
 	//url string,cover_url string,created_by string,modified_by string,modified_on int
 	con := GetDataBase().C("chord")
-	err = con.Insert(&Chord{ID: bson.NewObjectId(), Name: name,Singer:singer,Kind:kind,Url:name,Key:key,CoverUrl:name,ModifiedBy:setting.User,ModifiedOn:time.Now().Unix()})
+	err = con.Insert(&Chord{ID: bson.NewObjectId(), Name: name,Singer:singer,Kind:kind,Url:name,Count:count,Key:key,CoverUrl:"chords_cover/"+name,ModifiedBy:setting.User,ModifiedOn:time.Now().Unix()})
 	return
 }
 

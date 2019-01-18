@@ -80,7 +80,7 @@
     function indexInit() {
         $.ajax({
             type: "GET",
-            url: "/play/chords?page=1",
+            url: "/play/chords?page=1.jpg",
             async: true,
             dataType: "json",
             //xhrFields:{withCredentials:true},
@@ -103,7 +103,7 @@
                             '                    <p><span>'+chords[index].Singer+'</span> - <a class="text-dark" href="#">'+chords[index].Name+'</a></p>\n' +
                             '                </h5>\n' +
                             '                <p>调式：<span>E</span></p>\n' +
-                            '                <div class="mb-1 text-muted">'+userDate(chords[index].ModifiedOn)+'</div>\n' +
+                            '                <div class="mb-1.jpg text-muted">'+userDate(chords[index].ModifiedOn)+'</div>\n' +
                             '\n' +
                             '            </div>\n' +
                             '            <img class="card-img-right flex-auto d-none d-md-block rounded"  alt="Perfect" style="width: 320px; height: 180px;" src="http://localhost:8000/static/chords_cover/default.jpg" data-holder-rendered="true">\n' +

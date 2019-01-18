@@ -110,6 +110,7 @@ func AddChord(c *gin.Context){
 	//url := c.Query("guitar_name")
 	kind := c.Query("kind")
 	key := c.Query("key")
+	count := com.StrTo(c.Query("count")).MustInt()
 	//createdBy:= c.Query("guitar_name")
 
 	valid := validation.Validation{}
@@ -121,7 +122,7 @@ func AddChord(c *gin.Context){
 	if !valid.HasErrors(){
 		if !models.IsExistChordByName(name){
 			code = e.SUCCESS
-			models.InsertChord(name,singer,kind,key)
+			models.InsertChord(name,singer,kind,key,count)
 		}else{
 			code = e.ERROR_EXIST_CHORD
 		}

@@ -28,7 +28,7 @@ func InitRouter() *gin.Engine{
 			//"chords":data,
 			})
 	})
-	////详情页路由注册
+	//详情页路由注册
 	r.GET("/chordDetail", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "chord.html", gin.H{
 			"code": 200,
@@ -41,9 +41,9 @@ func InitRouter() *gin.Engine{
 	appv1 := r.Group("/play")
 	{
 		appv1.GET("/chord/:Id",v1.GetChord)
-		//appv1.GET("/chords",v1.GetChordsList)
 		appv1.GET("/chords",v1.GetChordsListWithCondition)
 		appv1.POST("/chord",v1.AddChord)
+		//appv1.GET("/chords",v1.GetChordsList)
 		//appv1.GET("/chords",v1.GetChordsList)
 		//appv1.GET("/chords",v1.GetChordsList)
 	}
