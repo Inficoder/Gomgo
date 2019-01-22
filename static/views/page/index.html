@@ -12,7 +12,7 @@
     <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script type="text/javascript" src="/static/js/jquery-3.2.1.js"></script>
 </head>
-<body onload="getChordsList()">
+<body onload="getChordsList(1)">
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
     <a class="navbar-brand" href="#">Guitar</a>
@@ -21,16 +21,16 @@
             <a class="nav-link" href="/index">chords</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">about</a>
+            <a class="nav-link" href="/static/views/page/about.html">about</a>
         </li>
     </ul>
 
-    <select class="form-control btn-outline-info" id="sel1" style="width: 100px;margin: 0 10px 0 10px" onchange="getChordsList()">
+    <select class="form-control btn-outline-info" id="sel1" style="width: 100px;margin: 0 10px 0 10px" onchange="getChordsList(1)">
         <option value="playAndSing">弹唱</option>
         <option value="thrum">指弹</option>
     </select>
 
-    <select class="form-control btn-outline-info" id="sel2" style="width: 100px;margin: 0 10px 0 10px" onchange="getChordsList()">
+    <select class="form-control btn-outline-info" id="sel2" style="width: 100px;margin: 0 10px 0 10px" onchange="getChordsList(1)">
         <option>All</option>
         <option>C</option>
         <option>D</option>
@@ -44,6 +44,9 @@
     <br/><br/><br/>
 
     <div id="chordList" style="width: 120%;height:90%;margin: auto"></div>
+    <div id="page">
+        <ul id="pageDiv" class="pagination pagination-lg"  style="margin: 10px 20% 10%"></ul>
+    </div>
 </div>
 
 <script>
@@ -59,28 +62,39 @@
         let day = myDate.getDate();
         return year + '-' + month + '-' + day;
     }
+
+    function pageController(page,countSum){   //控制导航disabled
+        //alert($("#previous").attr("class"))
+        if(page == 1){
+            $("#previous").attr("class","page-item disabled")
+        }
+        if(page == countSum){
+            $("#next").attr("class","page-item disabled")
+        }
+    }
     //ajax
-    function getChordsList() {
+    function getChordsList(page) {
         let sel1 = $("#sel1").val()
         let sel2 = $("#sel2").val()
-        if(sel1 == "thrum"){
+        if(sel1 == "thrum"){   //指弹没有指法音高？
             sel2 = "0"
         }
-        $("#chordList").text("")
-
+        //$("#chordList").empty();
         $.ajax({
             type: "GET",
-            url: "/play/chords?kind="+sel1+"&key="+sel2,
+            url: "/play/chords?kind="+sel1+"&key="+sel2+"&page="+page,
             async: true,
             dataType: "json",
             //xhrFields:{withCredentials:true},
             success: function(data) {
-                let chords = data.data.chords;
-                //let count = data.data.total;
-                let output = "";
-                $.each(chords, function(index,obj) {
-                    // alert(chords[index].ID)
-                    output +=
+                let chords = data.data.chords;  //数据列表
+                let count = data.data.total;   //数据条数
+                let output = "";  //数据列显示
+                let pageDiv = ""; //分页控制显示
+                if(count != 0 ){
+                    $.each(chords, function(index,obj) {
+                        // alert(chords[index].ID)
+                        output +=
                             '    <div class="col-md-6">\n' +
                             '        <div class="card flex-md-row mb-4 box-shadow h-md-250" style="width: 150%;height: 101%">\n' +
                             '            <div class="card-body d-flex flex-column align-items-start" >\n' +
@@ -95,8 +109,20 @@
                             '            <img  class="card-img-right flex-auto d-none d-md-block rounded"  alt="Perfect" style="width: 180px; height: 180px;" src="/static/'+obj.CoverUrl+'" data-holder-rendered="true" onclick=getChordDetail("'+obj.ID+'")>\n' +
                             '        </div>\n' +
                             '    </div>'
-                });
-                $("#chordList").append(output);
+                    });
+                    $("#chordList").html(output);
+                    count = parseInt(count/5)+1;  //页数计算
+                    pageDiv += '<li id="previous" class="page-item" ><a class="page-link" onclick="getChordsList('+(page-1)+')">上一页</a></li>';
+                    for (let i=1;i <= count;i++){
+                        pageDiv += '<li class="page-item" id="li'+i+'"><a class="page-link" onclick="getChordsList('+i+')">'+i+'</a></li>'
+                    }
+                    pageDiv +='<li id="next" class="page-item"><a class="page-link" onclick="getChordsList('+(page+1)+')">下一页</a></li>';
+                    $("#pageDiv").html(pageDiv)                        //显示页面控制
+                    $("#li"+page).attr("class","page-item active")   //设置当前页码高亮
+                    pageController(page,count)    //控制disabled
+                }else{
+                    $("#chordList").html("lalala~~~");
+                }
             },
             error: function() {
                 alert("error!")

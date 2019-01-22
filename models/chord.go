@@ -13,6 +13,7 @@ type Chord struct {
 	Name string 	   `bson:"name"`
 	Singer string`bson:"singer"`
 	Url string `bson:"url"`
+	LocateWay int `bson:"locate_way"`
 	Count int `bson:"count"`
 	Kind string `bson:"kind"`
 	//CreatedBy string `bson:"created_by"`
@@ -20,6 +21,7 @@ type Chord struct {
 	ModifiedBy string `bson:"modified_by"`
 	ModifiedOn int64 `bson:"modified_on"`
 	CoverUrl string `bson:"cover_url"`
+
 }
 
 
@@ -78,9 +80,9 @@ func GetChordsListWithCondition(pageNum int,pageSize int,kind string,key string)
 	kind = "弹唱"
 	}
 	if key != "All" {
-		con.Find(bson.M{"kind":kind,"key":key}).Limit(pageSize).Batch(pageNum).All(&chords)
+		con.Find(bson.M{"kind":kind,"key":key}).Limit(pageSize).Skip(pageSize*(pageNum-1)).All(&chords)
 	}else{
-		con.Find(bson.M{"kind":kind}).Limit(pageSize).Batch(pageNum).All(&chords)
+		con.Find(bson.M{"kind":kind}).Limit(pageSize).Skip(pageSize*(pageNum-1)).All(&chords)
 	}
 	return chords
 }
@@ -95,10 +97,10 @@ func GetChord(Id string) (Chord) {
 	return chord
 }
 
-func InsertChord(name string,singer string, kind string,key string,count int) (err error) {
+func InsertChord(name string,singer string, locate_way int,kind string,key string,count int) (err error) {
 	//url string,cover_url string,created_by string,modified_by string,modified_on int
 	con := GetDataBase().C("chord")
-	err = con.Insert(&Chord{ID: bson.NewObjectId(), Name: name,Singer:singer,Kind:kind,Url:name,Count:count,Key:key,CoverUrl:"chords_cover/"+name,ModifiedBy:setting.User,ModifiedOn:time.Now().Unix()})
+	err = con.Insert(&Chord{ID: bson.NewObjectId(), Name: name,Singer:singer,Kind:kind,Url:name,LocateWay:locate_way,Count:count,Key:key,CoverUrl:"chords_cover/"+name,ModifiedBy:setting.User,ModifiedOn:time.Now().Unix()})
 	return
 }
 
