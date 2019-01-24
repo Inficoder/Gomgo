@@ -50,7 +50,7 @@
                 let output = ""
                 let chord = data.data["chord"]
                 for (let i = 1;i <= chord.Count;i++){
-                    output += '<img src=/static/chords/'+chord.Url+'/'+i+'.jpg class="img-fluid">'
+                    output += '<img src=/static/chords/'+chord.Url+'/'+i+' class="img-fluid">'
                 }
                 $(document).attr("title",chord.Singer+' - '+chord.Name)
                 $("#left").html(output)

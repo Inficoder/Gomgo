@@ -3,7 +3,6 @@ package models
 import (
 	"Gomgo/middleware/logging"
 	"Gomgo/pkg/setting"
-	"fmt"
 	"gopkg.in/mgo.v2/bson"
 	"time"
 )
@@ -40,7 +39,6 @@ func IsExistChordById(Id string) bool{
 	con := GetDataBase().C("chord")
 	objectId := bson.ObjectIdHex(Id)
 	con.Find(bson.M{"_id":objectId}).One(&chord)
-	fmt.Println(chord)
 	if chord.Name != "" {
 		return true
 	}
@@ -57,8 +55,25 @@ func GetChordsCount() int{
 	return count
 }
 
+func GetChordsCountByCondition(kind string,key string) int{
+	var chords []Chord
+	con := GetDataBase().C("chord")
+	//var count int
+	if kind == "thrum"{
+		kind = "指弹"
+	}else{
+		kind = "弹唱"
+	}
+	if key != "All" {
+		con.Find(bson.M{"kind":kind,"key":key}).All(&chords)
+	}else{
+		con.Find(bson.M{"kind":kind}).All(&chords)
+	}
+	return len(chords)
+}
 
-func GetChordsList(pageNum int,pageSize int) ([]Chord ) {
+
+func GetChordsList(pageNum int,pageSize int) []Chord  {
 	var chords []Chord
 	con := GetDataBase().C("chord")
 	con.Find(bson.M{}).Limit(pageSize).Batch(pageNum).All(&chords)

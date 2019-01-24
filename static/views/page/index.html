@@ -88,7 +88,8 @@
             //xhrFields:{withCredentials:true},
             success: function(data) {
                 let chords = data.data.chords;  //数据列表
-                let count = data.data.total;   //数据条数
+                let count = data.data.pageCalculate;   //数据条数
+                //alert(count)
                 let output = "";  //数据列显示
                 let pageDiv = ""; //分页控制显示
                 if(count != 0 ){
@@ -106,7 +107,7 @@
                             '                <div class="mb-1.jpg text-muted">'+UnixDateTrans(obj.ModifiedOn)+'</div>\n' +
                             '\n' +
                             '            </div>\n'+
-                            '            <img  class="card-img-right flex-auto d-none d-md-block rounded"  alt="Perfect" style="width: 180px; height: 180px;" src="/static/'+obj.CoverUrl+'" data-holder-rendered="true" onclick=getChordDetail("'+obj.ID+'")>\n' +
+                            '            <img  class="card-img-right flex-auto d-none d-md-block rounded" style="width: 180px; height: 180px;" src="/static/'+obj.CoverUrl+'" data-holder-rendered="true" onclick=getChordDetail("'+obj.ID+'")>\n' +
                             '        </div>\n' +
                             '    </div>'
                     });
@@ -114,20 +115,23 @@
                     count = parseInt(count/5)+1;  //页数计算
                     pageDiv += '<li id="previous" class="page-item" ><a class="page-link" onclick="getChordsList('+(page-1)+')">上一页</a></li>';
                     for (let i=1;i <= count;i++){
-                        pageDiv += '<li class="page-item" id="li'+i+'"><a class="page-link" onclick="getChordsList('+i+')">'+i+'</a></li>'
+                        pageDiv += '<li class="page-item" id="li'+i+'"><a id="li-a'+i+'" class="page-link" onclick="getChordsList('+i+')">'+i+'</a></li>'
                     }
                     pageDiv +='<li id="next" class="page-item"><a class="page-link" onclick="getChordsList('+(page+1)+')">下一页</a></li>';
-                    $("#pageDiv").html(pageDiv)                        //显示页面控制
-                    $("#li"+page).attr("class","page-item active")   //设置当前页码高亮
+                    $("#pageDiv").html(pageDiv)                       //显示页面控制
+                    $("#li"+page).attr("class","page-item active")  //设置当前页码高亮
+                    $("#li-a"+page).attr("onclick","")
                     pageController(page,count)    //控制disabled
                 }else{
                     $("#chordList").html("lalala~~~");
+                    $("#pageDiv").html("")
                 }
             },
             error: function() {
                 alert("error!")
             }
         });
+
     }
 </script>
 </body>

@@ -84,6 +84,7 @@ func GetChordsListWithCondition(c *gin.Context){
 	code := e.SUCCESS
 	data["exist"] = "true"
 	list := models.GetChordsListWithCondition(pageNum,setting.PageSize,kind,key)
+	data["pageCalculate"]= models.GetChordsCountByCondition(kind,key)
 	fmt.Println(list)
 	if len(list)==0{
 		data["exist"] = "false"
@@ -91,6 +92,7 @@ func GetChordsListWithCondition(c *gin.Context){
 		data["chords"] = list
 		data["total"] = models.GetChordsCount()
 	}
+	data["currentPageCount"] = len(list)
 	c.JSON(http.StatusOK, gin.H{
 		"code": code,
 		"msg":  e.GetMsg(code),

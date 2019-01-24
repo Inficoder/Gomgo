@@ -5,10 +5,33 @@
     <title>ChordDetail</title>
     <script type="text/javascript" src="/static/js/jquery-3.2.1.js"></script>
 </head>
-<body onload="indexInit(GetQueryString('ID'))">
+<body>
 <p id="msg"></p>
 <!--<img src="/static/chords_cover/default.jpg" style="width: 200px;">-->
 <script>
+    jsReadFiles("http://localhost:8000/static/chords/perfect/1.jpg")
+    //js 读取文件
+    function jsReadFiles(files) {
+        if (files.length) {
+            let file = files[0];
+            let reader = new FileReader();//new一个FileReader实例
+            if (/text+/.test(file.type)) {//判断文件类型，是不是text类型
+                reader.onload = function() {
+                    $('body').append('<pre>' + this.result + '</pre>');
+                }
+                alert(reader.readAsText(file));
+            } else if(/image+/.test(file.type)) {//判断文件是不是imgage类型
+                s = reader.onload = function() {
+                    $('body').append('<img src="' + this.result + '"/>');
+                }
+                alert(reader.readAsDataURL(file));
+
+            }else{
+                alert(reader.readAsDataURL(file))
+            }
+        }
+    }
+
     function GetQueryString(name)
     {
         let reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
