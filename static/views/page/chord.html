@@ -7,6 +7,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title></title>
+    <link rel="icon" href="static/chords_cover/icon.ico" type="image/x-icon" />
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -28,11 +29,17 @@
 <hr/>
 <hr/>
 <hr/>
-<div class="container">
-    <div id="left" style="width: 100%;float: left;">
-    </div>
-    <div id="right" style="width: 45%;float: right;">
-    </div>
+<div class="containers">
+    <div id="d1" style="width: 50%;float: left;"></div>
+    <div id="d2" style="width: 50%;float: right"></div>
+    <div id="d3" style="width: 50%;float: left"></div>
+    <div id="d4" style="width: 50%;float: right"></div>
+    <div id="d5" style="width: 50%;float: left"></div>
+    <div id="d6" style="width: 50%;float: right"></div>
+</div>
+
+<div class="containers">
+    <div id="left1" style="width: 100%;"></div>
 </div>
 
 <script>
@@ -49,14 +56,20 @@
             success: function(data) {
                 let output = ""
                 let chord = data.data["chord"]
-                for (let i = 1;i <= chord.Count;i++){
-                    output += '<img src=/static/chords/'+chord.Url+'/'+i+' class="img-fluid">'
+                let imgs = data.data["imgUrls"]
+                let flag = chord.LocateWay
+                if(flag == 0){
+                    for (let i = 0;i < chord.Count;i++){
+                            $("#d"+(i+1)).html('<img src="'+imgs[i]+'" class="img-fluid">');
+                    }
+                }else{
+                    for (let i = 0;i < chord.Count;i++){
+                        //output += '<td  style="width: 50%;"><img src="'+imgs[i]+'" class="img-fluid" ></td>'
+                        output += '<img src="'+imgs[i]+'" class="img-fluid">'
+                    }
+                    $("#left1").html(output)
                 }
                 $(document).attr("title",chord.Singer+' - '+chord.Name)
-                $("#left").html(output)
-                //$("#right").append('<img src="/static/chords_cover/default.jpg" class="img-fluid">')
-                //$("#msg").html(chord.Singer+"-"+chord.Name+" "+chord.Url+" "+chord.Kind+" "+chord.CoverUrl+" "+UnixDateTrans(chord.ModifiedOn));
-                //alert(data.data)
             },
             error: function() {
                 alert("error!")
@@ -80,7 +93,6 @@
             return  unescape(r[2]);
         return null;
     }
-
 </script>
 </body>
 </html>

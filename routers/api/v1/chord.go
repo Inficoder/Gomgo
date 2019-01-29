@@ -5,6 +5,7 @@ import (
 	"Gomgo/models"
 	"Gomgo/pkg/e"
 	"Gomgo/pkg/setting"
+	"Gomgo/pkg/util"
 	"fmt"
 	"github.com/Unknwon/com"
 	"github.com/astaxie/beego/validation"
@@ -16,7 +17,6 @@ func GetChord(c *gin.Context) {
 	Id := com.StrTo(c.Param("Id")).String()
 
 	data := make(map[string]interface{})
-
 	valid := validation.Validation{}
 	valid.Required(Id, "Id").Message("Id不为空")
 
@@ -26,7 +26,10 @@ func GetChord(c *gin.Context) {
 		if !models.IsExistChordById(Id){
 			data["exist"] = "false"
 		} else {
-			data["chord"] = models.GetChord(Id)
+			model := models.GetChord(Id)
+			data["chord"] = model
+			//fmt.Println(model.Url)
+			data["imgUrls"] = util.GetChordImages(model.Url)
 		}
 
 	} else {
